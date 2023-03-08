@@ -22,4 +22,9 @@ export default {
   text-align: center;
   color: #2c3e50;
 }
+h1 {
+  border-bottom: 1px solid #ddd;
+  display: inline-block;
+  padding: 25px;
+}
 </style>
