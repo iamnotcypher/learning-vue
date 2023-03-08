@@ -1,5 +1,7 @@
 <template>
   <h1>{{ title }}</h1>
+  <input type="text" ref="name">
+  <button @click="handleClick">click me</button>
 </template>
 
 <script>
@@ -9,6 +11,11 @@ export default {
   data() {
     return {
       title: 'My First Vue App :)'
+    }
+  },
+  methods: {
+    handleClick() {
+      console.log(this.$refs.name)
     }
   }
 }
@@ -21,6 +28,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  margin-top: 60px;
 }
 h1 {
   border-bottom: 1px solid #ddd;
