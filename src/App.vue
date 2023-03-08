@@ -1,6 +1,6 @@
 <template>
   <h1>{{ title }}</h1>
-  <Modal :header="header" />
+  <Modal :header="header" theme="sales" />
 </template>
 
 <script>
