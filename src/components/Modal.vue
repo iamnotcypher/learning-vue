@@ -2,6 +2,9 @@
   <div @click.self="closeModal" class="backdrop">
     <div class="modal" :class="{ sales: theme === 'sales' }">
       <slot></slot>
+      <div class="actions">
+        <slot name="links"></slot>
+      </div>
     </div>
   </div>
 </template>
@@ -17,7 +20,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
   .modal {
     width: 400px;
     padding: 20px;
@@ -34,16 +37,34 @@ export default {
     width: 100%;
     height: 100%;
   }
-  h1 {
+  .modal h1 {
     color: #03cfb4;
     border: none;
     padding: 0;
   }
+  .modal .actions {
+    text-align: center;
+    margin: 30px 0 10px 0;
+  }
+  .modal .actions a {
+    color:#2c3e50;
+    padding: 8px;
+    border: 1px solid #fff;
+    border-radius: 3px;
+    text-decoration: none;
+    margin: 10px;
+}
   .modal.sales {
     background: crimson;
     color: white;
   }
   .modal.sales h1 {
     color: white;
+  }
+  .modal.sales .actions {
+    color: #fff;
+  }
+  .modal.sales .actions a {
+    color: #fff;
   }
 </style>

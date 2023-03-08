@@ -4,6 +4,10 @@
   <Modal v-if="showModal" theme="sales" @close="toggleModal">
     <h1>Ninja Giveaway</h1>
     <p>Grab your ninja swag for half the price!</p>
+    <template v-slot:links>
+      <a href="#">sign up now</a>
+      <a href="#">more info</a>
+    </template>
   </Modal>
   <button @click.shift="toggleModal">Open modal (shift)</button>
 </template>
