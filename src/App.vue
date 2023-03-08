@@ -1,6 +1,8 @@
 <template>
   <h1>{{ title }}</h1>
-  <Modal v-if="showModal" :header="header" theme="sales" />
+  <p>Welcome!</p>
+  <Modal v-if="showModal" :header="header" theme="sales" @close="toggleModal" />
+  <button @click="toggleModal">Open modal</button>
 </template>
 
 <script>
@@ -19,8 +21,8 @@ export default {
     }
   },
   methods: {
-    handleClick() {
-      console.log(this.$refs.name)
+    toggleModal() {
+      this.showModal = !this.showModal
     }
   }
 }
