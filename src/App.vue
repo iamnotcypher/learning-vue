@@ -1,6 +1,5 @@
 <template>
   <h1>{{ title }}</h1>
-  <input type="text" ref="name">
   <Modal />
 </template>
 
