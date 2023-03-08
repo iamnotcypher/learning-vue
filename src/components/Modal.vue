@@ -1,11 +1,17 @@
 <template>
   <div class="backdrop">
     <div class="modal">
-      <h1>Eveniet suscipit quibusdam</h1>
+      <h1>{{ header }}</h1>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus recusandae totam facere officia eum! Inventore possimus assumenda eligendi ipsa magni.</p>
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  props: ['header']
+}
+</script>
 
 <style scoped>
   .modal {

@@ -1,6 +1,6 @@
 <template>
   <h1>{{ title }}</h1>
-  <Modal />
+  <Modal :header="header" />
 </template>
 
 <script>
@@ -13,7 +13,8 @@ export default {
   },
   data() {
     return {
-      title: 'My First Vue App :)'
+      title: 'My First Vue App :)',
+      header: 'Sign up for the Giveaways!'
     }
   },
   methods: {
