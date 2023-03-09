@@ -9,7 +9,16 @@
       <a href="#">more info</a>
     </template>
   </Modal>
+  <Modal v-if="showModalTwo" theme="" @close="toggleModalTwo">
+    <h1>Ninja Giveaway</h1>
+    <p>Grab your ninja swag for half the price!</p>
+    <template v-slot:links>
+      <a href="#">sign up now</a>
+      <a href="#">more info</a>
+    </template>
+  </Modal>
   <button @click.shift="toggleModal">Open modal (shift)</button>
+  <button @click="toggleModalTwo">Open modal</button>
 </template>
 
 <script>
@@ -23,12 +32,16 @@ export default {
   data() {
     return {
       title: 'My First Vue App :)',
-      showModal: false
+      showModal: false,
+      showModalTwo: false
     }
   },
   methods: {
     toggleModal() {
       this.showModal = !this.showModal
+    },
+    toggleModalTwo() {
+      this.showModalTwo = !this.showModalTwo
     }
   }
 }
