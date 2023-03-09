@@ -1,24 +1,24 @@
 <template>
   <h1>{{ title }}</h1>
   <p>Welcome!</p>
-  <Modal v-if="showModal" theme="sales" @close="toggleModal">
-    <h1>Ninja Giveaway</h1>
-    <p>Grab your ninja swag for half the price!</p>
-    <template v-slot:links>
-      <a href="#">sign up now</a>
-      <a href="#">more info</a>
-    </template>
-  </Modal>
-  <Modal v-if="showModalTwo" theme="" @close="toggleModalTwo">
-    <h1>Ninja Giveaway</h1>
-    <p>Grab your ninja swag for half the price!</p>
-    <template v-slot:links>
-      <a href="#">sign up now</a>
-      <a href="#">more info</a>
-    </template>
-  </Modal>
-  <button @click.shift="toggleModal">Open modal (shift)</button>
-  <button @click="toggleModalTwo">Open modal</button>
+  <teleport to="#modals" v-if="showModal">
+    <Modal theme="sales" @close="toggleModal">
+      <h1>Ninja Giveaway</h1>
+      <p>Grab your ninja swag for half the price!</p>
+      <template v-slot:links>
+        <a href="#">sign up now</a>
+        <a href="#">more info</a>
+      </template>
+    </Modal>
+  </teleport>
+  <teleport to="#modals" v-if="showModalTwo">
+    <Modal theme="" @close="toggleModalTwo">
+      <h1>Sign up to the newsletter</h1>
+      <p>For updates and promo codes!</p>
+    </Modal>
+    <button @click="toggleModal">Open modal</button>
+    <button @click="toggleModalTwo">Open modal</button>
+  </teleport>
 </template>
 
 <script>
@@ -48,7 +48,8 @@ export default {
 </script>
 
 <style>
-#app {
+#app,
+#modals {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
