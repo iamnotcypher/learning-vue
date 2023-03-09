@@ -16,9 +16,9 @@
       <h1>Sign up to the newsletter</h1>
       <p>For updates and promo codes!</p>
     </Modal>
-    <button @click="toggleModal">Open modal</button>
-    <button @click="toggleModalTwo">Open modal</button>
   </teleport>
+  <button @click="toggleModal">Open modal</button>
+  <button @click="toggleModalTwo">Open modal</button>
 </template>
 
 <script>
